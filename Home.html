@@ -13,14 +13,14 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #e6f4ea; /* light green background */
-      color: #1b3e2b; /* dark green text */
+      background: #e6f4ea; 
+      color: #1b3e2b; 
     }
 
     .sticky-nav {
       position: sticky;
       top: 0;
-      background: #2b6b3a; /* dark green nav */
+      background: #2b6b3a; 
       color: #f0f9f4;
       padding: 15px 0;
       z-index: 100;
@@ -96,7 +96,7 @@
     }
 
     .card {
-      background: #d8f0d5; /* soft green card */
+      background: #d8f0d5; 
       border-radius: 15px;
       padding: 30px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -113,7 +113,7 @@
     .card-icon {
       font-size: 48px;
       margin-bottom: 20px;
-      color: #3d8b4a; /* medium green */
+      color: #3d8b4a; 
     }
 
     .card h3 {
@@ -161,7 +161,7 @@
       max-height: 200px;
     }
 
-    /* Food Stories Slider */
+  
     .food-stories .story-slider {
       position: relative;
       max-width: 900px;
@@ -191,7 +191,7 @@
     .food-stories .story-text {
       position: absolute;
       bottom: 0;
-      background: rgba(43,107,58,0.85); /* dark green overlay */
+      background: rgba(43,107,58,0.85); 
       color: #f0f9f4;
       width: 100%;
       padding: 20px;
@@ -259,7 +259,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="sticky-nav">
     <div class="nav-container">
       <div class="logo">Eat Like a Local</div>
@@ -272,13 +271,13 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+
   <div class="hero" id="home">
     <h1>Eat Like a Local</h1>
     <p>Discover authentic, cheap, and delicious food while exploring local culture.</p>
   </div>
 
-  <!-- Cards Section -->
+
   <section class="cards-section">
     <div class="container">
       <h2 style="text-align: center; margin-bottom: 20px; color: #1b3e2b;">What you will discover</h2>
@@ -288,29 +287,29 @@
           <h3>Local Favorites</h3>
           <p>Skip the tourist traps. We highlight authentic street food and neighborhood favorites that locals love.</p>
           <img src="local.jpg" alt="Local Food">
-          <button class="toggle-btn">Toggle Description</button>
+          <button class="toggle-btn">Description</button>
           <div class="description">
-            <p>Here you’ll find a deeper dive into why locals love these dishes and where to try them.</p>
+            <p>Here you will find a deeper dive into why locals love these dishes and where to try them.</p>
           </div>
         </div>
         <div class="card">
           <div class="card-icon">📍</div>
           <h3>Hidden Spots Map</h3>
-          <p>Interactive maps with exact locations of hidden gems — from noodle carts to market stalls.</p>
+          <p>Interactive maps with exact locations of hidden gems — from food stalls to restaurant.</p>
           <img src="hidden.jpg" alt="Hidden Spots">
-          <button class="toggle-btn">Toggle Description</button>
+          <button class="toggle-btn">Description</button>
           <div class="description">
-            <p>Discover exclusive insider spots that aren’t on Google Maps.</p>
+            <p>Discover exclusive insider spots that no guide has ever told.</p>
           </div>
         </div>
         <div class="card">
           <div class="card-icon">📝</div>
           <h3>Honest Reviews</h3>
-          <p>Real reviews from other travelers and locals, so you know exactly what to expect before you go.</p>
+          <p>Reviews from other travelers and locals, so you know exactly what to expect before you go.</p>
           <img src="review.jpg" alt="Honest Reviews">
-          <button class="toggle-btn">Toggle Description</button>
+          <button class="toggle-btn">Description</button>
           <div class="description">
-            <p>Read in-depth experiences with pictures and ratings from fellow explorers.</p>
+            <p>Read in-depth experiences with ratings from fellow explorers.</p>
           </div>
         </div>
         <div class="card">
@@ -318,7 +317,7 @@
           <h3>Budget-Friendly</h3>
           <p>Every recommendation is affordable and high quality — perfect for budget travelers.</p>
           <img src="budget.png" alt="Budget Friendly">
-          <button class="toggle-btn">Toggle Description</button>
+          <button class="toggle-btn">Description</button>
           <div class="description">
             <p>See how to eat amazing food under $5 without compromising quality.</p>
           </div>
@@ -326,9 +325,9 @@
         <div class="card">
           <div class="card-icon">🌍</div>
           <h3>Cultural Connection</h3>
-          <p>Learn how food reflects local traditions, community, and identity. It's more than just a meal — it's culture.</p>
+          <p>Learn how food reflects local traditions, community, and identity. It's not just a meal — it's culture.</p>
           <img src="culture.avif" alt="Cultural Connection">
-          <button class="toggle-btn">Toggle Description</button>
+          <button class="toggle-btn">Description</button>
           <div class="description">
             <p>Understand the stories and traditions behind each dish.</p>
           </div>
@@ -340,14 +339,14 @@
           <img src="travel.jpg" alt="Smart Travel">
           <button class="toggle-btn">Toggle Description</button>
           <div class="description">
-            <p>Get tips on safety, timing, and finding the best deals while eating local.</p>
+            <p>Get tips on timing and finding the best deals while eating local.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Food Stories Section -->
+
   <section class="food-stories">
     <div class="container">
       <h2 style="text-align:center; margin-bottom:40px; color:#1b3e2b;">Food Stories Around Town</h2>
@@ -385,16 +384,16 @@
     </div>
   </section>
 
-  <!-- Footer -->
+
   <footer class="footer">
     <div class="container">
       <p>© 2025 Eat Like a Local. Live Like a local</p>
     </div>
   </footer>
 
-  <!-- Script for toggle and slider -->
+
   <script>
-    // Toggle card description
+ 
     const buttons = document.querySelectorAll('.toggle-btn');
     buttons.forEach(button => {
       button.addEventListener('click', () => {
@@ -403,7 +402,7 @@
       });
     });
 
-    // Slider functionality
+  
     const stories = document.querySelector('.food-stories .stories');
     const totalStories = document.querySelectorAll('.food-stories .story').length;
     let index = 0;
@@ -421,3 +420,4 @@
 
 </body>
 </html>
+
