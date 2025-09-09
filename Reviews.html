@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>What Others Think - Reviews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f0f0f0; color: #333; line-height: 1.5; }
+
+    /* Navigation */
+    .sticky-nav { position: sticky; top: 0; background: #2c3e50; color: white; padding: 15px 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1);}
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+    .logo { font-size: 24px; font-weight: bold; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-links a { color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px; transition: background 0.3s; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.1); }
+
+    /* Pinterest-style grid for food reviews */
+    .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: auto; /* let content define the height */
+  gap: 20px;             /* space between items */
+}
+    .review:nth-child(1),
+    .review:nth-child(2),
+    .michelin-review:nth-child(3),
+    .michelin-review:nth-child(4),
+    .short-review:nth-child(5),
+    .short-review:nth-child(6),
+    .short-review:nth-child(7),
+    .short-review:nth-child(8),
+    .short-review:nth-child(9) {
+  grid-row: auto; /* remove fixed spans */
+}
+
+    /* Food reviews templates */
+    .review, .michelin-review, .short-review { border-radius: 6px; padding: 20px; position: relative; }
+    .review { background: white; }
+    .review-date { font-size: 13px; color: gray; margin-bottom: 10px; }
+    .review h2 { font-size: 18px; margin-bottom: 10px; color: #2c3e50; }
+    .review p { margin-bottom: 10px; }
+
+    .michelin-review { background: #d32f2f; color: white; border: 3px solid white; }
+    .michelin-review .review-date { color: #ffcccc; font-weight: bold; }
+    .michelin-review h2 { color: white; font-size: 20px; margin-bottom: 12px; }
+    .michelin-review p { line-height: 1.5; margin-bottom: 10px; }
+
+    .short-review { background: #fff; padding: 15px; font-size: 14px; }
+    .short-review .review-date { color: #666; font-size: 12px; margin-bottom: 5px; }
+    .short-review h3 { font-size: 16px; margin-bottom: 5px; color: #2c3e50; }
+
+    .thumbs-up-container { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; font-size: 16px; margin-top: 10px; }
+    .thumbs-up-container input[type="checkbox"] { display: none; }
+    .thumbs-up-icon { transition: color 0.3s; }
+    .thumbs-up-container input[type="checkbox"]:checked + .thumbs-up-icon { color: #ff4500; }
+    .thumbs-up-count { font-weight: bold; transition: color 0.3s; }
+    .thumbs-up-container input[type="checkbox"]:checked + .thumbs-up-icon + .thumbs-up-count { color: #ff4500; }
+
+    @media (max-width: 1024px) { .reviews-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); } }
+    @media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; grid-auto-rows: auto; } }
+
+    /* Site reviews section (restored original BBC-style) */
+    .site-reviews { max-width: 900px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; gap: 15px; }
+    .site-reviews h2 { font-size: 22px; text-align: center; color: #2c3e50; margin-bottom: 20px; }
+    .site-review { padding: 15px; border-left: 4px solid #2c3e50; background: #f9f9f9; border-radius: 5px; opacity: 0; transform: translateY(50px); transition: all 1s ease-out; }
+    .site-review .review-author { font-weight: bold; color: #2c3e50; }
+
+    /* Scroll reveal */
+    .site-review:nth-child(1) { transition-delay: 0.2s; }
+    .site-review:nth-child(2) { transition-delay: 0.4s; }
+    .site-review:nth-child(3) { transition-delay: 0.6s; }
+    .site-review:nth-child(4) { transition-delay: 0.8s; }
+    .site-review:nth-child(5) { transition-delay: 1s; }
+    .site-review:nth-child(6) { transition-delay: 1.2s; }
+
+    .site-reviews:target .site-review,
+    .site-reviews:hover .site-review,
+    .site-reviews:focus-within .site-review { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) { .site-reviews { padding: 15px; } }
+  </style>
+</head>
+<body>
+
+<nav class="sticky-nav">
+  <div class="nav-container">
+    <div class="logo">Eat Like a Local</div>
+    <div class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Map and Spots.html">Map & Spots</a>
+      <a href="Food guide.html">Food Guide</a>
+      <a href="Reviews.html" class="active">Reviews</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Pinterest-style reviews -->
+<div class="reviews-grid">
+  <!-- Jay Fai review -->
+  <div class="review">
+    <div class="review-date">August 3, 2025 • Reviewed by <strong>@sor_loest</strong></div>
+    <h2>Jay Fai – Bangkok Street Food</h2>
+    <p>I finally visited <strong>Jay Fai</strong>, famous for her crab omelette — and it lived up to the hype. Huge chunks of crab, crispy on the outside. Expensive, but worth it!</p>
+    <p>Expect a long wait, but it’s part of the experience. Jay Fai herself still cooks, goggles and all!</p>
+    <label class="thumbs-up-container">
+      <input type="checkbox" />
+      <span class="thumbs-up-icon">👍</span>
+      <span class="thumbs-up-count">1</span>
+    </label>
+  </div>
+
+  <!-- Michelin reviews -->
+  <div class="michelin-review">
+    <div class="review-date">September 11, 2025 • Reviewed by <strong>@FoodieStar</strong></div>
+    <h2>Gaggan Anand – Michelin 2-Star, Bangkok</h2>
+    <p>Dining at <strong>Gaggan Anand</strong> was an unforgettable experience. The Michelin 2-star restaurant delivers innovative Indian cuisine that challenges the palate in the best way possible.</p>
+    <p>Each dish tells a story with bold flavors and artistic presentation. Highly recommended if you're looking to experience the pinnacle of Thailand’s fine dining.</p>
+    <label class="thumbs-up-container">
+      <input type="checkbox" />
+      <span class="thumbs-up-icon">👍</span>
+      <span class="thumbs-up-count">1</span>
+    </label>
+  </div>
+
+  <div class="michelin-review">
+    <div class="review-date">September 11, 2025 • Reviewed by <strong>@MichelinLover</strong></div>
+    <h2>Le Du – Michelin 1-Star, Bangkok</h2>
+    <p><strong>Le Du</strong> offers a modern twist on traditional Thai cuisine with fresh, seasonal ingredients. Their Michelin star is well deserved.</p>
+    <p>The tasting menu surprised me with unique flavors and creative plating. A must-visit for any food lover visiting Thailand.</p>
+    <label class="thumbs-up-container">
+      <input type="checkbox" />
+      <span class="thumbs-up-icon">👍</span>
+      <span class="thumbs-up-count">1</span>
+    </label>
+  </div>
+
+  <!-- Steam-style short reviews -->
+  <div class="short-review">
+    <div class="review-date">Aug 20, 2025 • @ThaiEats</div>
+    <h3>Pad Thai Heaven</h3>
+    <p>Delicious, authentic, and super affordable. Loved it!</p>
+    <label class="thumbs-up-container">
+      <input type="checkbox" />
+      <span class="thumbs-up-icon">👍</span>
+      <span class="thumbs-up-count">1</span>
+    </label>
+  </div>
+
+  <div class="short-review">
+    <div class="review-date">Aug 21, 2025 • @FoodFan</div>
+    <h3>Mango Sticky Rice</h3>
+    <p>Perfectly sweet and creamy. A must-try!</p>
+    <label class="thumbs-up-container">
+      <input type="checkbox" />
+      <span class="thumbs-up-icon">👍</span>
+      <span class="thumbs-up-count">1</span>
+    </label>
+  </div>
+
+  <div class="short-review">
+    <div class="review-date">Aug 22, 2025 • @StreetBites</div>
+    <h3>Grilled Chicken Skewers</h3>
+    <p>Simple, tasty, and full of flavor.</p>
+    <label class="thumbs-up-container">
+      <input type="checkbox" />
+      <span class="thumbs-up-icon">👍</span>
+      <span class="thumbs-up-count">1</span>
+    </label>
+  </div>
+
+  <div class="short-review">
+    <div class="review-date">Aug 23, 2025 • @NomNom</div>
+    <h3>Tom Yum Soup</h3>
+    <p>Spicy and sour, exactly what I wanted.</p>
+    <label class="thumbs-up-container">
+      <input type="checkbox" />
+      <span class="thumbs-up-icon">👍</span>
+      <span class="thumbs-up-count">1</span>
+    </label>
+  </div>
+
+  <div class="short-review">
+    <div class="review-date">Aug 24, 2025 • @FoodExplorer</div>
+    <h3>Green Curry</h3>
+    <p>Rich, creamy, and full of Thai flavors!</p>
+    <label class="thumbs-up-container">
+      <input type="checkbox" />
+      <span class="thumbs-up-icon">👍</span>
+      <span class="thumbs-up-count">1</span>
+    </label>
+  </div>
+</div>
+
+<!-- Restored “What Others Say About Our Website” -->
+<div class="site-reviews">
+  <h2>What Others Say About Our Website</h2>
+
+  <div class="site-review">
+    <p>"Eat Like a Local is my go-to guide when exploring Bangkok’s street food. Super informative and easy to navigate!"</p>
+    <div class="review-author">- FoodieMag</div>
+    <a href="Home.html">Check our Home Page</a>
+  </div>
+
+  <div class="site-review">
+    <p>"A perfect companion for travelers! The map and spot recommendations are on point."</p>
+    <div class="review-author">- Travel & Taste</div>
+    <a href="Map and Spots.html">View Map & Spots</a>
+  </div>
+
+  <div class="site-review">
+    <p>"Love the detailed food guides. It’s like having a local friend showing you the best spots."</p>
+    <div class="review-author">- Gourmet Today</div>
+    <a href="Food guide.html">Check Food Guide</a>
+  </div>
+
+  <div class="site-review">
+    <p>"Beautifully designed and packed with useful info. Makes planning a food tour effortless."</p>
+    <div class="review-author">- BBC Travel</div>
+  </div>
+
+  <div class="site-review">
+    <p>"I discovered hidden gems thanks to Eat Like a Local. Highly recommended!"</p>
+    <div class="review-author">- Lonely Planet Blog</div>
+  </div>
+
+  <div class="site-review">
+    <p>"From street food to fine dining, this website covers it all with style and insight."</p>
+    <div class="review-author">- Food Network</div>
+  </div>
+</div>
+
+</body>
+</html>

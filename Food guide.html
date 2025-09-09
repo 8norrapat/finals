@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eat Like a Bangkok Local - Food Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f8f4;
+      color: #1b3e2b;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background: #2c3e50;
+      color: white;
+      padding: 15px 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Hero Slides */
+    .slide {
+      position: relative;
+      height: 80vh;
+      min-height: 400px;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      color: white;
+    }
+
+    .slide img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transition: transform 0.5s ease;
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      background: rgba(0, 75, 25, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 50px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .slide-content.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-content h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #a8e6a3;
+    }
+
+    .slide-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Scroll spacing */
+    .spacer {
+      height: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        width: 100%;
+      }
+
+      .slide-content {
+        padding: 20px;
+      }
+
+      .slide-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .slide-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="sticky-nav">
+    <div class="nav-container">
+      <div class="logo">Eat Like a Local</div>
+      <div class="nav-links">
+        <a href="Home.html">Home</a>
+        <a href="Map and Spots.html">Map & Spots</a>
+        <a href="Food guide.html" class="active">Food Guide</a>
+        <a href="Reviews.html">Reviews</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Slide 1: Pad Thai -->
+  <div class="slide">
+    <img src="thai pad.jpg" alt="Pad Thai">
+    <div class="slide-content">
+      <h2>🍜 Pad Thai (ผัดไทย)</h2>
+      <p>
+        Bangkok's most famous street dish: stir-fried rice noodles with egg, tofu, shrimp, bean sprouts, and crushed peanuts. 
+        Look for carts with long lines of locals — these are usually the most authentic. 
+        The sauce should be a perfect balance of sweet, sour, and salty, with a slightly smoky aroma from the wok.
+      </p>
+      <p>
+        Tip: Squeeze fresh lime on top, and don't forget the chili flakes if you like a kick! Try it in Thanon Phra Athit for the most authentic flavor.
+      </p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="slide">
+    <img src="tom.jpg" alt="Tom Yum Goong">
+    <div class="slide-content">
+      <h2>🍲 Tom Yum Goong (ต้มยำกุ้ง)</h2>
+      <p>
+        Spicy and sour shrimp soup with lemongrass, kaffir lime leaves, galangal, lime juice, and chili peppers. 
+        It's bold, aromatic, and represents the quintessential Thai flavor profile. 
+        The soup is both invigorating and comforting, perfect for a rainy day in Bangkok.
+      </p>
+      <p>
+        Tip: Pair with jasmine rice to balance the heat and savor the rich, herbal flavors. Try it at street vendors in Yaowarat (Chinatown) for traditional preparation.
+      </p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- Slide 3: Moo Ping -->
+  <div class="slide">
+    <img src="moo" alt="Moo Ping">
+    <div class="slide-content">
+      <h2>🍢 Moo Ping (หมูปิ้ง)</h2>
+      <p>
+        Grilled marinated pork skewers served with sticky rice. A favorite breakfast for locals, often bought fresh from early morning street stalls. 
+        The marinade is sweet and savory, sometimes with a hint of coconut milk for tenderness.
+      </p>
+      <p>
+        Tip: Eat while warm, straight off the grill. Pair with a small cup of Thai iced coffee or tea for an authentic Bangkok morning experience.
+      </p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- Slide 4: Mango Sticky Rice -->
+  <div class="slide">
+    <img src="mango.jpg" alt="Mango Sticky Rice">
+    <div class="slide-content">
+      <h2>🥭 Mango Sticky Rice (ข้าวเหนียวมะม่วง)</h2>
+      <p>
+        Sweet, ripe mango served with coconut milk-infused sticky rice and drizzled with extra coconut cream. 
+        A refreshing dessert that's perfect after a spicy meal, showcasing Thailand's tropical flavors.
+      </p>
+      <p>
+        Tip: Visit local markets for seasonal mangoes. Add roasted mung beans on top for added texture.
+      </p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- Slide 5: Where to Go -->
+  <div class="slide">
+    <img src="sta.jpg" alt="Bangkok Market">
+    <div class="slide-content">
+      <h2>🛒 Best Places to Eat</h2>
+      <p>
+        Bangkok is full of street food markets and alleys where locals eat. Here are some top spots: 
+      </p>
+      <ul>
+        <li><strong>Chatuchak Market</strong> – Massive variety of food, fresh ingredients, and low prices.</li>
+        <li><strong>Yaowarat (Chinatown)</strong> – Great night eats with neon-lit streets and authentic flavors.</li>
+        <li><strong>Victory Monument</strong> – Famous for boat noodles and classic Thai snacks.</li>
+        <li><strong>Or Tor Kor Market</strong> – High-quality fruits, desserts, and local dishes.</li>
+      </ul>
+      <p>Local Tip: If locals are lining up, you're in the right place!</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <script>
+    // Scroll reveal effect
+    const slides = document.querySelectorAll('.slide-content');
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight / 1.1;
+
+      slides.forEach(slide => {
+        const slideTop = slide.getBoundingClientRect().top;
+
+        if(slideTop < triggerBottom) {
+          slide.classList.add('show');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+</body>
+</html>

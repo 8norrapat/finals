@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Map and Spots</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #e6f4ea; /* soft green page background */
+      font-family: Arial, sans-serif;
+      color: #eafaf1; /* light green text */
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background: #2c3e50;
+      color: white;
+      padding: 15px 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo { font-size: 24px; font-weight: bold; }
+
+    .nav-links { display: flex; gap: 30px; }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { background: rgba(255, 255, 255, 0.1); }
+
+    .location-card {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #1b3e2b; /* dark green card */
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .location-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    .map-area {
+      flex: 1 1 60%;
+      min-width: 300px;
+      height: 400px;
+      border-right: 2px solid #27ae60; /* green border between map and info */
+    }
+
+    .map-area iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      border-radius: 0;
+    }
+
+    .location-details {
+      flex: 1 1 40%;
+      padding: 30px;
+      background: #2b6b3a; /* medium dark green */
+      color: #eafaf1; /* light green text */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .location-details h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: #a8e6a3; /* light green heading */
+    }
+
+    .location-details p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .nav-links { flex-direction: column; gap: 10px; width: 100%; }
+      .nav-links a { display: block; width: 100%; }
+      .location-card { flex-direction: column; }
+      .map-area { height: 300px; border-right: none; border-bottom: 2px solid #27ae60; }
+      .location-details { padding: 20px; }
+      .location-details h2 { font-size: 20px; }
+      .location-details p { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="sticky-nav">
+    <div class="nav-container">
+      <div class="logo">Eat Like a Local</div>
+      <div class="nav-links">
+        <a href="Home.html">Home</a>
+        <a href="Map and Spots.html" class="active" aria-current="page">Map & Spots</a>
+        <a href="Food guide.html">Food Guide</a>
+        <a href="Reviews.html">Reviews</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Location 1 -->
+  <div class="location-card">
+    <div class="map-area">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.435636182365!2d100.50222727570949!3d13.752582586639306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29916f7bc1a6b%3A0xd7abaa5b13a1d242!2z4Lij4LmJ4Liy4LiZ4LmA4LiI4LmK4LmE4Lid!5e0!3m2!1sth!2sth!4v1755670084101!5m2!1sth!2sth" 
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+    <div class="location-details">
+      <h2>Jay Fai Street Food</h2>
+      <p>327 Maha Chai Road, Samran Rat, Phra Nakhon, Bangkok, 10200, Thailand.</p>
+      <p>Best time to visit: Morning to late afternoon to avoid long lines.</p>
+      <p>Specialties: Famous for crab omelets and Thai seafood dishes.</p>
+    </div>
+  </div>
+
+  <!-- Location 2 -->
+  <div class="location-card">
+    <div class="map-area">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.554312587517!2d100.52081737509013!3d13.745411886645783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2992d9335e209%3A0x7b8d07a5b3f356ce!2z4LiW4LiZ4LiZIOC4muC4o-C4o-C4l-C4seC4lOC4l-C4reC4hyDguIHguKPguLjguIfguYDguJfguJ7guKHguKvguLLguJnguITguKM!5e0!3m2!1sth!2sth!4v1755672474679!5m2!1sth!2sth" 
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+    <div class="location-details">
+      <h2>Banthat Thong Road</h2>
+      <p>Located in the Siam area, reachable by BTS Skytrain (National Stadium Station) or MRT Subway (Hua Lamphong Station).</p>
+      <p>Best time to visit: Evening around 8 pm for full street food experience.</p>
+      <p>Specialties: Vibrant street food scene with noodles, satay, and desserts.</p>
+    </div>
+  </div>
+
+  <!-- Location 3 -->
+  <div class="location-card">
+    <div class="map-area">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.6970369052856!2d100.54495787509107!3d13.797128286599444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29c141ea782c3%3A0xef703d7f3769af76!2sOr%20Tor%20Kor%20Market!5e0!3m2!1sen!2sth!4v1757423426435!5m2!1sen!2sth" 
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+    <div class="location-details">
+      <h2>Or Tor Kor Market</h2>
+      <p>Kamphaeng Phet Rd, Chatuchak, Bangkok, Thailand.</p>
+      <p>Best time to visit: Morning to early afternoon for fresh produce and street snacks.</p>
+      <p>Specialties: Fruits, local snacks, and authentic Thai ingredients.</p>
+    </div>
+  </div>
+
+</body>
+</html>
