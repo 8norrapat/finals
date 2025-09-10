@@ -5,6 +5,62 @@
   <title>What Others Think - Reviews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    @media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .review, .michelin-review, .short-review {
+    padding: 15px;
+  }
+
+  .review h2,
+  .michelin-review h2,
+  .short-review h3 {
+    font-size: 1.2rem;
+  }
+
+  .site-reviews {
+    padding: 15px;
+    margin: 30px 15px;
+  }
+
+  .site-review {
+    padding: 12px;
+  }
+
+  .site-reviews h2 {
+    font-size: 20px;
+  }
+
+  .review-date {
+    font-size: 12px;
+  }
+
+  .thumbs-up-container {
+    font-size: 14px;
+  }
+}
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; background: #f0f0f0; color: #333; line-height: 1.5; }
 
@@ -231,3 +287,4 @@
 </body>
 
 </html>
+
