@@ -8,7 +8,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: Arial, sans-serif; background: #f0f0f0; color: #333; line-height: 1.5; overflow-x: hidden; }
 
-  /* Sticky Navbar */
+
   .sticky-nav {
     position: sticky; top: 0; background: #2c3e50; color: white; padding: 15px 0;
     z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -19,7 +19,7 @@
   .nav-links a { color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px; transition: background 0.3s; }
   .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.1); }
 
-  /* Reviews Grid */
+
   .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
   .review, .michelin-review, .short-review {
     border-radius: 6px; padding: 20px; position: relative; opacity: 0; transform: translateY(30px);
@@ -44,7 +44,7 @@
   .short-review { background: #fff; padding: 15px; font-size: 14px; }
   .short-review h3 { font-size: 16px; margin-bottom: 5px; color: #2c3e50; }
 
-  /* Thumbs Up */
+  
   .thumbs-up-container { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; font-size: 16px; margin-top: 10px; }
   .thumbs-up-container input[type="checkbox"] { display: none; }
   .thumbs-up-icon { transition: color 0.3s; }
@@ -52,7 +52,7 @@
   .thumbs-up-count { font-weight: bold; transition: color 0.3s; }
   .thumbs-up-container input[type="checkbox"]:checked + .thumbs-up-icon + .thumbs-up-count { color: #ff4500; }
 
-  /* Site Reviews fade in/out on hover */
+  
   .site-reviews {
     max-width: 900px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     display: flex; flex-direction: column; gap: 15px;
@@ -72,7 +72,7 @@
   .site-review .review-author { font-weight: bold; color: #2c3e50; }
   .site-review a { display: inline-block; margin-top: 5px; font-size: 14px; color: #2c3e50; text-decoration: underline; }
 
-  /* Mobile */
+  
   @media (max-width: 768px) {
     .nav-container { flex-direction: column; align-items: flex-start; gap: 10px; }
     .nav-links { flex-direction: column; gap: 10px; width: 100%; }
@@ -156,7 +156,7 @@
   </div>
 </div>
 
-<!-- What Others Say Section -->
+
 <div class="site-reviews">
   <h2>What Others Say About Our Website</h2>
   <div class="site-review">
@@ -190,4 +190,5 @@
 
 </body>
 </html>
+
 
